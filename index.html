@@ -1,28 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Stream Embed</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #121212;
-            overflow: hidden;
-        }
-        #player {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paddock Live</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #e10600;
+      --bg-color: #111;
+      --text-color: #fff;
+      --accent-color: #444;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      width: 100%;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    .stream-container {
+      margin: 2rem 0;
+      width: 90%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: center;
+    }
+
+    .stripe {
+      height: 5px;
+      width: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--primary-color) 10px,
+        var(--accent-color) 10px,
+        var(--accent-color) 20px
+      );
+    }
+  </style>
 </head>
 <body>
-    <iframe id="player" marginheight="0" marginwidth="0" src="https://www.vidembed.re/stream/287c5471-669e-4439-8ac1-9c210f55ffad" scrolling="no" allowfullscreen="yes" allow="encrypted-media; picture-in-picture;" width="100%" height="100%" frameborder="0"></iframe>
+
+  <div class="stripe"></div>
+  <header>
+    <h1>Paddock Live 🏎️</h1>
+  </header>
+
+  <div class="stream-container">
+    <!-- Replace the src below with your live stream embed link -->
+    <iframe
+      src="https://www.vidembed.re/stream/287c5471-669e-4439-8ac1-9c210f55ffad"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <footer>
+    &copy; 2025 Paddock Live. All rights reserved. Stay fast. Stay live. 🏁
+  </footer>
 </body>
 </html>
